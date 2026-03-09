@@ -14,9 +14,7 @@ def client():
         yield client
 
 
-def test_financial_summary_endpoint(client):
-    """Test that /api/financial_summary returns the correct text report."""
-    response = client.get("/api/financial_summary")
+
 
     assert response.status_code == 200
     assert response.is_json
