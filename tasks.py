@@ -53,7 +53,8 @@ def generate_charts_task():
 
 
 
-# TODO: Implement the function below to log a transaction
+# TODO: 
+# Implement the function below to log a transaction 
 # Remember to get the session, query the transaction by ID, and then call the log_transaction_audit helper function
 # If the transaction is not found, print an error message: "Transaction with ID {transaction_id} not found for audit logging."
 @celery.task(name="log_transaction_audit_task")
@@ -61,7 +62,11 @@ def log_transaction_audit_task(transaction_id: int):
     """Celery task to log transaction audit information."""
     session = get_session()
     try:
-        pass
+        transaction = session.query(Transaction).filter_by(id=transaction_id).first()
+        if transaction:
+            log_transaction_audit(transaction)
+        else:
+            logger.error(f"Transaction with ID {transaction_id} not found for audit logging.")
     finally:
         session.close()
 
