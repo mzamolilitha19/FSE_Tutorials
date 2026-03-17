@@ -9,8 +9,8 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.11
       - key: SECRET_KEY
-        generate Value: true
-      - key:CURRENCY_SYMBOL
+        generateValue: true
+      - key: CURRENCY_SYMBOL
         value: R
       - key: DATABASE_URL
         value: sqlite:data/finance.db pytest
