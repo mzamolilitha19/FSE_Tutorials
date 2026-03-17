@@ -13,4 +13,4 @@ services:
       - key: CURRENCY_SYMBOL
         value: R
       - key: DATABASE_URL
-        value: sqlite:data/finance.db pytest
+        value: sqlite:///data/finance.db
