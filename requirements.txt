@@ -5,3 +5,5 @@ pytest
 python-dotenv
 sqlalchemy
 loguru
+black
+gunicorn
